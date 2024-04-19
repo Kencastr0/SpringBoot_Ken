@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.4</version>
+		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>riwi</groupId>
-	<artifactId>firstWeb</artifactId>
+	<groupId>com.toDoList</groupId>
+	<artifactId>toDoList</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>firstWeb</name>
-	<description>Demo project for Spring Boot</description>
+	<name>toDoList</name>
+	<description>To do list with Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -23,13 +23,18 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		  </dependency>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -41,21 +46,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
-
-	<dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>1.18.30</version>
-        <scope>provided</scope>
-    </dependency>
 	</dependencies>
-
-	
 
 	<build>
 		<plugins>
