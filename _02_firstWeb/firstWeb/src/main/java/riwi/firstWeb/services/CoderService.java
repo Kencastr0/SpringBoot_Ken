@@ -4,6 +4,9 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -18,6 +21,17 @@ public class CoderService {
     // Indica que esto es una inyeccion de dependencias
     @Autowired
     private CoderRepository objCoderRepository;
+
+    public Page<Coder> fingPaginated(int page, int size) {
+        if (page < 0) {
+            page = 0;
+        }
+
+        // Crear objeto de paginación
+        Pageable objPageable = PageRequest.of(page, size);
+
+        return this.objCoderRepository.findAll(objPageable);
+    }
 
     // Servicio para listar todos los coders
     public List<Coder> findAll() {
